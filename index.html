@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vì sao không đăng nhập được tài khoản tại TP. Hồ Chí Minh?</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Chevron Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #121F28;
+            --accent-gold: #D4AF37;
+            --bg-white: #FFFFFF;
+            --bg-light: #F4F4F4;
+            --text-dark: #333333;
+            --text-muted: #555555;
+            --header-height: 80px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+        }
+
+        /* Header Styling */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--primary-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .logo-container img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            color: #FFFFFF;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #121F28 0%, #1c3241 50%, #0d161d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--header-height) + 40px) 20px 80px 20px;
+            color: #FFFFFF;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: inline-block;
+            border-bottom: 1px solid var(--accent-gold);
+            padding-bottom: 5px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            color: #FFFFFF;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            color: #d1d8dc;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4AF37 0%, #aa8c2c 100%);
+            color: var(--primary-dark);
+            padding: 15px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+            background: linear-gradient(135deg, #e0bc3a, #b89731);
+        }
+
+        /* Section Dividers with CSS Linear Gradients */
+        .section-divider {
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+
+        /* Alternating Sections */
+        section {
+            padding: 90px 10%;
+        }
+
+        section:nth-of-type(odd) {
+            background-color: var(--bg-white);
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+
+        p, li {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Content Blocks */
+        .content-block {
+            margin-bottom: 40px;
+        }
+
+        .content-block h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        /* Tables Styling */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            background: #FFFFFF;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: var(--primary-dark);
+            color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #fafafa;
+        }
+
+        td a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+
+        /* FAQ Section / Accordion Cards */
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .faq-card {
+            background: #FFFFFF;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .faq-card:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+        }
+
+        .faq-header {
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        .faq-header h4 {
+            font-size: 1.15rem;
+            color: var(--primary-dark);
+            margin: 0;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .faq-header i {
+            color: var(--accent-gold);
+            transition: transform 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .faq-content {
+            padding: 0 25px 20px 25px;
+            display: none;
+        }
+
+        .faq-content p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        .faq-card.active {
+            border-color: var(--accent-gold);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .faq-card.active .faq-header i {
+            transform: rotate(180deg);
+        }
+
+        .faq-card.active .faq-content {
+            display: block;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: var(--primary-dark);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        footer p {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                flex-direction: column;
+                padding: 20px 0;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Header -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.webp" alt="Logo">
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#gioi-thieu">Giới thiệu</a></li>
+                <li><a href="#nguyen-nhan">Nguyên nhân</a></li>
+                <li><a href="#cach-kiem-tra">Cách kiểm tra</a></li>
+                <li><a href="#xu-ly">Xử lý lỗi</a></li>
+                <li><a href="#faq">Câu hỏi thường gặp</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <span class="hero-tag">Hỗ trợ kỹ thuật TP. Hồ Chí Minh</span>
+            <h1>Vì sao không đăng nhập được tài khoản tại TP. Hồ Chí Minh?</h1>
+            <p>Tìm hiểu các nguyên nhân phổ biến và hướng dẫn từng bước khắc phục sự cố đăng nhập tài khoản một cách an toàn và nhanh chóng.</p>
+            <a href="#gioi-thieu" class="cta-btn">Khám phá ngay</a>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Giới thiệu Section -->
+    <section id="gioi-thieu" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Giới thiệu</h2>
+            <p>Người dùng tại TP. Hồ Chí Minh đôi khi nhập đúng tên đăng nhập và mật khẩu nhưng vẫn không thể truy cập tài khoản. Trang có thể không tải, xuất hiện thông báo lỗi, đăng nhập liên tục thất bại, mã xác minh không đến hoặc phiên đăng nhập bị ngắt giữa chừng. Nguyên nhân không nhất thiết nằm ở tài khoản. Sự cố có thể liên quan đến kết nối Internet, trình duyệt, cookie, bộ nhớ đệm hoặc hệ thống xác thực.</p>
+            <p>Thay vì thử nhiều cách cùng lúc, bạn nên kiểm tra từng yếu tố để xác định chính xác nguyên nhân. Hãy bắt đầu với kết nối Internet và thông tin đăng nhập. Tiếp theo, kiểm tra trình duyệt, cookie và bộ nhớ đệm. Nếu vẫn không thể truy cập, hãy kiểm tra bước xác minh tài khoản và trạng thái hệ thống để xác định dịch vụ có đang gặp sự cố hay không.</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Nguyên nhân Section -->
+    <section id="nguyen-nhan" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Những nguyên nhân thường khiến không thể đăng nhập</h2>
+            
+            <div class="content-block">
+                <h3>Kết nối Internet tại TP. Hồ Chí Minh không ổn định</h3>
+                <p>Kết nối mạng không ổn định có thể khiến trang đăng nhập tải chậm, bị đứng hoặc không gửi được yêu cầu xác thực. Hãy kiểm tra Wi-Fi hoặc dữ liệu di động và thử mở một website khác. Nếu các trang khác cũng gặp lỗi, vấn đề có thể nằm ở kết nối. Bạn cũng có thể kiểm tra DNS hoặc tình trạng mất mạng tạm thời từ nhà cung cấp dịch vụ.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Cookie hoặc bộ nhớ đệm của trình duyệt gặp lỗi</h3>
+                <p>Cookie cũ đôi khi làm phiên xác thực không được tạo đúng cách. Bộ nhớ đệm bị lỗi cũng có thể khiến trình duyệt tải phiên bản cũ của trang hoặc làm một số thành phần đăng nhập không hoạt động. Xóa cookie và cache của website, sau đó mở lại trang đăng nhập để kiểm tra.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Thông tin tài khoản chưa chính xác</h3>
+                <p>Hãy kiểm tra lại tên tài khoản hoặc email và mật khẩu trước khi thử nhiều lần. Chú ý chữ hoa, chữ thường và khoảng trắng khi nhập mật khẩu. Nếu thông tin đã chính xác nhưng hệ thống vẫn từ chối truy cập, nguyên nhân có thể không phải do mật khẩu.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Mã xác minh hoặc phiên đăng nhập bị gián đoạn</h3>
+                <p>Mã OTP đôi khi đến chậm do vấn đề mạng hoặc hệ thống gửi mã. Nếu xác minh qua email, hãy kiểm tra cả thư mục Spam hoặc Thư rác. Tránh yêu cầu gửi lại mã liên tục trong thời gian ngắn vì hệ thống có thể tạm giới hạn các yêu cầu xác minh.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Cách kiểm tra Section -->
+    <section id="cach-kiem-tra" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Cách kiểm tra lỗi đăng nhập theo từng bước</h2>
+
+            <div class="content-block">
+                <h3>Bước 1: Kiểm tra kết nối trước tiên</h3>
+                <p>Hãy kiểm tra Internet trước khi thay đổi các cài đặt khác. Nếu đang dùng Wi-Fi, thử chuyển sang dữ liệu di động hoặc ngược lại. Mở một website khác để kiểm tra kết nối. Nếu nhiều website cùng không truy cập được, hãy xử lý vấn đề mạng trước.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Bước 2: Kiểm tra lại thông tin tài khoản</h3>
+                <p>Nhập lại tên tài khoản hoặc email và mật khẩu một cách thủ công. Kiểm tra Caps Lock, chữ hoa, chữ thường và khoảng trắng thừa. Nếu không nhớ mật khẩu, hãy dùng chức năng khôi phục tài khoản thay vì thử sai quá nhiều lần. Điều này giúp tránh việc tài khoản bị giới hạn đăng nhập tạm thời.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Bước 3: Xóa cache và cookie</h3>
+                <p>Trên Google Chrome hoặc Microsoft Edge, mở phần cài đặt quyền riêng tư và xóa dữ liệu duyệt web, đặc biệt là cookie và bộ nhớ đệm. Trên điện thoại, bạn có thể xóa dữ liệu duyệt web trong phần cài đặt của trình duyệt. Sau đó, đóng hoàn toàn trình duyệt, mở lại và thử đăng nhập trong một tab mới.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Bước 4: Thử thiết bị hoặc trình duyệt khác</h3>
+                <p>Nếu đăng nhập trên máy tính không được, hãy thử điện thoại. Bạn cũng có thể chuyển từ Chrome sang Edge hoặc Safari. Nếu tài khoản hoạt động bình thường trên thiết bị khác, lỗi có thể liên quan đến trình duyệt hoặc thiết bị ban đầu. Ngược lại, nếu mọi thiết bị đều gặp cùng một lỗi, cần kiểm tra tài khoản hoặc hệ thống xác thực.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Xử lý lỗi Section -->
+    <section id="xu-ly" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Cách xử lý khi trang đăng nhập không tải hoặc liên tục báo lỗi</h2>
+
+            <div class="content-block">
+                <h3>Kiểm tra trình duyệt và JavaScript</h3>
+                <p>Nếu trang đăng nhập không hiển thị đầy đủ, hãy kiểm tra xem JavaScript có đang được bật hay không. Một số chức năng xác thực cần JavaScript để hoạt động. Bạn cũng nên tắt tạm thời các extension có thể can thiệp vào trang, chẳng hạn như trình chặn nội dung. Sau đó, cập nhật trình duyệt lên phiên bản mới nhất và tải lại trang.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Kiểm tra DNS và kết nối mạng</h3>
+                <p>Hãy khởi động lại router để làm mới kết nối. Sau đó, thử truy cập trang bằng một mạng khác để đối chiếu. Nếu website chỉ lỗi trên một mạng, vấn đề có thể liên quan đến DNS hoặc kết nối của nhà cung cấp. Trong trường hợp xảy ra lỗi phân giải tên miền, có thể thử một DNS công cộng phù hợp.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Kiểm tra thời gian hệ thống</h3>
+                <p>Ngày, giờ hoặc múi giờ không chính xác trên thiết bị đôi khi ảnh hưởng đến chứng chỉ và cơ chế xác thực. Hãy mở cài đặt ngày giờ và bật chế độ tự động. Sau khi điều chỉnh, khởi động lại trình duyệt rồi thử đăng nhập lại.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Khi nào lỗi có thể liên quan đến hệ thống xác thực?</h3>
+                <p>Nếu nhiều thiết bị đều gặp cùng một lỗi đăng nhập, nguyên nhân có thể không nằm ở máy tính hoặc điện thoại. Bạn có thể thử các trình duyệt khác nhau để đối chiếu. Nếu trang vẫn mở bình thường nhưng quá trình xác minh bị dừng, hệ thống xác thực có thể đang gặp vấn đề. Tương tự, nếu mã xác nhận không được gửi dù email hoặc số điện thoại vẫn chính xác, cần kiểm tra thêm trạng thái dịch vụ.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Kiểm tra trạng thái dịch vụ</h3>
+                <p>Hãy xem các thông báo chính thức của dịch vụ để biết hệ thống có đang bảo trì hoặc gặp sự cố hay không. Trong thời gian này, không nên liên tục gửi yêu cầu đăng nhập hoặc mã xác minh. Việc thử quá nhiều lần có thể làm quá trình kiểm tra phức tạp hơn. Nếu hệ thống đang gặp lỗi, hãy chờ dịch vụ ổn định rồi thực hiện lại quy trình đăng nhập.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Những điều nên kiểm tra trước khi liên hệ hỗ trợ</h3>
+                <p>Trước khi liên hệ hỗ trợ, hãy ghi lại thời điểm xảy ra lỗi, thiết bị đang sử dụng, tên và phiên bản trình duyệt cùng loại kết nối Internet. Bạn cũng nên lưu nội dung thông báo lỗi hoặc chụp màn hình để nhân viên hỗ trợ dễ xác định nguyên nhân. Tuy nhiên, ảnh chụp không được chứa mật khẩu, mã OTP hoặc dữ liệu riêng tư.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Không chia sẻ thông tin bảo mật</h3>
+                <p>Không gửi mật khẩu cho bất kỳ ai, kể cả người tự nhận là nhân viên hỗ trợ. Mã OTP cũng không nên cung cấp cho người khác. Khi cần trợ giúp, chỉ sử dụng kênh hỗ trợ chính thức của dịch vụ để bảo vệ tài khoản và thông tin cá nhân.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Cách xác định nguyên nhân nhanh trong 5 phút</h3>
+                <p>Bảng dưới đây giúp khoanh vùng lỗi trước khi thực hiện các bước phức tạp hơn. Bạn có thể áp dụng cho nhiều trang đăng nhập, kể cả khi kiểm tra trang như <a href="https://12betsmart.link/">12BET</a>.</p>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kiểm tra</th>
+                            <th>Kết quả</th>
+                            <th>Nguyên nhân có thể</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Website khác cũng không mở</td>
+                            <td>Có</td>
+                            <td>Kết nối mạng</td>
+                        </tr>
+                        <tr>
+                            <td>Trình duyệt khác đăng nhập được</td>
+                            <td>Có</td>
+                            <td>Cache, cookie hoặc extension</td>
+                        </tr>
+                        <tr>
+                            <td>Thiết bị khác đăng nhập được</td>
+                            <td>Có</td>
+                            <td>Thiết bị hoặc trình duyệt</td>
+                        </tr>
+                        <tr>
+                            <td>Không nhận được mã xác minh</td>
+                            <td>Có</td>
+                            <td>Email, SMS hoặc xác thực</td>
+                        </tr>
+                        <tr>
+                            <td>Mọi thiết bị đều lỗi</td>
+                            <td>Có</td>
+                            <td>Hệ thống hoặc tài khoản</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FAQ Section -->
+    <section id="faq" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Câu hỏi thường gặp về lỗi đăng nhập tại TP. Hồ Chí Minh</h2>
+            
+            <div class="faq-container">
+                <div class="faq-card">
+                    <div class="faq-header">
+                        <h4>Vì sao nhập đúng mật khẩu nhưng vẫn không đăng nhập được?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Mật khẩu đúng không đảm bảo phiên đăng nhập luôn thành công. Lỗi có thể liên quan đến cookie, phiên đăng nhập, trình duyệt hoặc hệ thống xác thực.</p>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-header">
+                        <h4>Có nên đổi sang mạng di động khi không đăng nhập được không?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Có. Chuyển từ Wi-Fi sang dữ liệu di động giúp xác định liệu lỗi có liên quan đến mạng Wi-Fi hiện tại hay không.</p>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-header">
+                        <h4>Xóa cookie có làm mất tài khoản không?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Không. Xóa cookie của trình duyệt không xóa tài khoản. Tuy nhiên, bạn có thể cần đăng nhập lại trên website sau khi xóa dữ liệu.</p>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-header">
+                        <h4>Tại sao không nhận được mã xác minh?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Kiểm tra lại email hoặc số điện thoại, thư mục Spam, tín hiệu mạng và thời gian chờ. Mã có thể đến chậm trong một số trường hợp.</p>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-header">
+                        <h4>Khi nào nên liên hệ bộ phận hỗ trợ?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Hãy liên hệ hỗ trợ nếu đã thử mạng, thiết bị và trình duyệt khác nhưng lỗi vẫn tiếp diễn hoặc tài khoản yêu cầu thêm bước xác minh.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block" style="margin-top: 50px;">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px;">Kết luận</h3>
+                <p>Lỗi đăng nhập tại TP. Hồ Chí Minh có thể đến từ mạng, trình duyệt, cookie, thông tin tài khoản hoặc hệ thống xác thực. Hãy kiểm tra từng yếu tố theo thứ tự thay vì thử nhiều cách cùng lúc. Nếu các bước cơ bản không hiệu quả, hãy sử dụng kênh hỗ trợ chính thức để được hướng dẫn an toàn.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 TP. Hồ Chí Minh Support Guide. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // FAQ Accordion functionality
+        const faqCards = document.querySelectorAll('.faq-card');
+        faqCards.forEach(card => {
+            const header = card.querySelector('.faq-header');
+            header.addEventListener('click', () => {
+                const isActive = card.classList.contains('active');
+                faqCards.forEach(c => c.classList.remove('active'));
+                if (!isActive) {
+                    card.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
